@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Percentage Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Love Match Studio</p>
+      <h1>Find the spark between two names.</h1>
+      <p class="intro">
+        Enter two names, calculate their love percentage, and keep every match saved in your memory box for later.
+      </p>
+
+      <form class="love-form" id="loveForm">
+        <label class="field">
+          <span>First Name</span>
+          <input type="text" id="firstName" name="firstName" placeholder="Enter first name" maxlength="40" required>
+        </label>
+
+        <label class="field">
+          <span>Second Name</span>
+          <input type="text" id="secondName" name="secondName" placeholder="Enter second name" maxlength="40" required>
+        </label>
+
+        <button type="submit" class="primary-btn">Calculate Love %</button>
+      </form>
+
+      <p class="feedback" id="feedback" aria-live="polite"></p>
+
+      <section class="result-card" id="resultCard" aria-live="polite">
+        <p class="result-label">Latest Result</p>
+        <p class="result-pair" id="resultPair">Your match will appear here</p>
+        <p class="result-score"><span id="resultScore">--</span>%</p>
+      </section>
+    </section>
+
+    <aside class="history-card">
+      <div class="history-header">
+        <div>
+          <p class="eyebrow">Memory Box</p>
+          <h2>Saved Couples</h2>
+        </div>
+        <div class="history-actions">
+          <button type="button" class="ghost-btn hidden" id="lockHistory">Lock</button>
+          <button type="button" class="ghost-btn hidden" id="clearHistory">Clear</button>
+        </div>
+      </div>
+
+      <section class="lock-panel" id="lockPanel">
+        <p class="lock-status" id="historyStatus">
+          Set a password to protect your saved couples before viewing the memory box.
+        </p>
+
+        <form class="lock-form" id="passwordSetupForm">
+          <label class="field">
+            <span>Create History Password</span>
+            <input
+              type="password"
+              id="newHistoryPassword"
+              name="newHistoryPassword"
+              placeholder="Create a password"
+              minlength="4"
+              maxlength="40"
+              required
+            >
+          </label>
+
+          <button type="submit" class="primary-btn small-btn">Save Password</button>
+        </form>
+
+        <form class="lock-form hidden" id="unlockForm">
+          <label class="field">
+            <span>Enter Password</span>
+            <input
+              type="password"
+              id="unlockPassword"
+              name="unlockPassword"
+              placeholder="Enter password"
+              minlength="4"
+              maxlength="40"
+              required
+            >
+          </label>
+
+          <button type="submit" class="primary-btn small-btn">Unlock History</button>
+        </form>
+
+        <p class="lock-feedback" id="historyFeedback" aria-live="polite"></p>
+      </section>
+
+      <div class="history-list" id="historyList">
+        <p class="empty-state">No couples saved yet. Your matches will appear here.</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
